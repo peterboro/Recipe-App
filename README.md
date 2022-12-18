@@ -77,9 +77,7 @@
 
 ## :card_index: Entity Relationship Diagram <a name="er-diagram"></a>
 
-<p align="center">
-  <img src="./images/recipe_erd_2_members.png" alt="Data model"  width="500px"  />
-</p>
+![er-diagram](https://raw.githubusercontent.com/microverseinc/curriculum-rails/main/recipe-app/images/recipe_erd_2_members.png?token=GHSAT0AAAAAAB4P5YGR3RVBE4QBGSQ5I7QCY47LEMQ)
 
 <!-- LIVE DEMO -->
 
