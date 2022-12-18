@@ -1,0 +1,20 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: 5 
+  username: postgres
+  password: Waithira2013 
+
+development:
+  <<: *default
+  database: Recipe_App_development
+
+test:
+  <<: *default
+  database: Recipe_App_test
+
+production:
+  <<: *default
+  database: Recipe_App_production
+  username: Recipe_App
+  password: <%= ENV["RECIPE_APP_DATABASE_PASSWORD"] %>
