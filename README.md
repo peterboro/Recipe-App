@@ -34,7 +34,7 @@
 
 <!-- PROJECT DESCRIPTION -->
 
-# 📖 Blog App <a name="about-project"></a>
+# 📖 Recipe App <a name="about-project"></a>
 
 **Recipe App** will allow you to save ingredients, keep track of what you have, create recipes, and generate a shopping list based on what you have and what you are missing from a recipe. 
 
@@ -129,7 +129,9 @@ To run the project, execute the following command:
 - GitHub: [@peterboro](https://github.com/peterboro)
 - LinkedIn: [Peter Njuguna](https://www.linkedin.com/in/peter-n-3bb940122/)
 
-
+👤 **Chimwemwe Mkandawire**
+- GitHub: [chimwemwe007](https://github.com/chimwemwe007)
+- LinkedIn: [Chimwemwe Mkandawire](https://www.linkedin.com/in/chimwemwe-mkandawire)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
