@@ -127,7 +127,7 @@ To run the project, execute the following command:
 👤 **Peter Njuguna**
 
 - GitHub: [@peterboro](https://github.com/peterboro)
-- LinkedIn: [Peter Njuguna](https://www.linkedin.com/in/peter-n-3bb940122/)
+- LinkedIn: [Peter Njuguna](https://www.linkedin.com/in/peter-boro-njuguna)
 
 👤 **Chimwemwe Mkandawire**
 - GitHub: [chimwemwe007](https://github.com/chimwemwe007)
