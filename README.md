@@ -77,7 +77,7 @@
 
 ## :card_index: Entity Relationship Diagram <a name="er-diagram"></a>
 
-![er-diagram](https://raw.githubusercontent.com/microverseinc/curriculum-rails/main/recipe-app/images/recipe_erd_2_members.png?token=GHSAT0AAAAAAB4P5YGR3RVBE4QBGSQ5I7QCY47LEMQ)
+![er-diagram](https://raw.githubusercontent.com/microverseinc/curriculum-rails/main/recipe-app/images/recipe_erd_3_members.png?token=GHSAT0AAAAAAB4P5YGR3RVBE4QBGSQ5I7QCY47LEMQ)
 
 <!-- LIVE DEMO -->
 
@@ -131,7 +131,11 @@ To run the project, execute the following command:
 
 👤 **Chimwemwe Mkandawire**
 - GitHub: [chimwemwe007](https://github.com/chimwemwe007)
-- LinkedIn: [Chimwemwe Mkandawire](https://www.linkedin.com/in/chimwemwe-mkandawire)
+- LinkedIn: [Chimwemwe-Mkandawire](https://www.linkedin.com/in/chimwemwe-mkandawire)
+
+👤 **Christabelle Youta Lactio**
+- GitHub: [Christabelle143](https://github.com/Christabelle143)
+- LinkedIn: [Christabelle Youta Lactio](https://www.linkedin.com/in/christabelle-youta-lactio)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
