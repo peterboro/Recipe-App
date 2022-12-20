@@ -134,9 +134,7 @@ To run the project, execute the following command:
 - LinkedIn: [Chimwemwe-Mkandawire](https://www.linkedin.com/in/chimwemwe-mkandawire)
 
 👤 **Christabelle Youta Lactio**
-- GitHub: [Christabelle143
-](https://github.com/Christabelle143
-)
+- GitHub: [Christabelle143](https://github.com/Christabelle143)
 - LinkedIn: [Christabelle Youta Lactio](https://www.linkedin.com/in/christabelle-youta-lactio)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
