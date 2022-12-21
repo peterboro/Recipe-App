@@ -4,25 +4,19 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   # GET /resource/sign_up
 
-
   # POST /resource
-
 
   # GET /resource/edit
 
-
   # PUT /resource
 
-
   # DELETE /resource
-
 
   # GET /resource/cancel
   # Forces the session data which is usually expired after sign
   # in to be expired now. This is useful if the user wants to
   # cancel oauth signing in/up in the middle of the process,
   # removing all OAuth session data.
-
 
   protected
 
@@ -37,7 +31,6 @@ class Users::RegistrationsController < Devise::RegistrationsController
   end
 
   # The path used after sign up.
-
 
   # The path used after sign up for inactive accounts.
 end
