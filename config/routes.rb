@@ -11,13 +11,18 @@ Rails.application.routes.draw do
 
     get '/users/password/new' => 'devise/passwords#new'
     get '/users/password/edit' => 'devise/passwords#edit'
+
+    devise_for :users
+    root 'home#index'
+    resources :inventory_foods
+    resources :inventories
+    resources :recipe_foods
+    resources :recipes
+    resources :foods
+    resources :users
+    # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+
+    # Defines the root path route ("/")
+    # root "articles#index"
+
   end
-
-
-
-
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
-
-  # Defines the root path route ("/")
-  # root "articles#index"
-end
