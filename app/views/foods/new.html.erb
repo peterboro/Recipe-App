@@ -1,0 +1,15 @@
+<%= stylesheet_link_tag 'foods' %>
+<h1>Add Food</h1>
+
+<%= form_for(@food) do |form| %>
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
+
+<%= link_to 'Back', foods_path %>
