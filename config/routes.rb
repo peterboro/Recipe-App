@@ -1,28 +1,24 @@
-Rails.application.routes.draw do  
-  # devise_for :users
-  # root to: "devise/sessions#new"
+Rails.application.routes.draw do
+  # devise_scope :user do
+  #   root to: "devise/sessions#new"
+  # end
 
-  devise_scope :user do
-    root to: "devise/sessions#new"
+  # devise_for :users, controllers: {
+  #   registrations: 'users/registrations',
+  #   sessions: 'users/sessions'
+  # }
 
-    get '/users/sign_out' => 'devise/sessions#destroy'
-    get '/users/sign_in' => 'devise/sessions#new'
-    get '/users/sign_up' => 'devise/registrations#new'
+  # resources :users, only: [:show]
+  # resources :foods, only: [:index, :new, :create, :destroy]
 
-    get '/users/password/new' => 'devise/passwords#new'
-    get '/users/password/edit' => 'devise/passwords#edit'
+  # get 'foods/:id/edit', to: 'foods#edit', as: 'edit_food'
+  # patch 'foods/:id', to: 'foods#update', as: 'update_food'
+  # get 'foods/:id', to: 'foods#show', as: 'show_food'
 
+    # User authentication routes
     devise_for :users
-    root 'home#index'
-    resources :inventory_foods
-    resources :inventories
-    resources :recipe_foods
-    resources :recipes
-    resources :foods
-    resources :users
-    # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
-    # Defines the root path route ("/")
-    # root "articles#index"
+    # Food routes
+    resources :foods, only: [:index, :new, :create]
 
-  end
+end
