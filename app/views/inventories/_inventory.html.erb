@@ -1,0 +1,7 @@
+<div id=<%="inventory-"+inventory.id.to_s %> class="inventory-container">
+<a href =<%= request.original_url+"/"+inventory.id.to_s %> class="-a">
+<h2 id=<%="inventory-"+inventory.id.to_s+"-name" %> class="inventory-name"><%= inventory.name %></h2>
+</a>
+<p id=<%="inventory-"+inventory.id.to_s+"-summary" %> class = "inventory-summary"><%= inventory.description %></p>
+<h4 id=<%="inventory-"+inventory.id.to_s+"-author" %> class="inventory-author">Author: <%= inventory.user.name %></h4>
+</div>
