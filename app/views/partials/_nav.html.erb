@@ -1,0 +1,13 @@
+<ul>
+
+  <% if current_user == nil %>
+    <li class="item"><%= link_to 'Login', new_user_session_path %></li>
+    <li class="item"><%= link_to 'Register', new_user_registration_path %></li>
+  <% else %>
+    <li class="item">
+      <%= button_to 'Logout',  destroy_user_session_path, method: :delete %>
+
+    </li>
+    <% end %>
+
+</ul>
