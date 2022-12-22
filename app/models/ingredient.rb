@@ -1,2 +1,0 @@
-class Ingredient < ApplicationRecord
-end

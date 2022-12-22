@@ -1,0 +1,30 @@
+<div class="new-food-container d-grid justify-content-center">
+    <h1 class="create-title">Add A NEW RECIPE</h1>
+    <%= form_with model: @recipe, url: user_recipes_path(user_id: current_user.id), local: true do |f| %>
+    <div class="form-group">
+        <div class="form-outline mb-4">
+            <%= f.label :name %><br />
+            <%= f.text_field :name, class: "form-control form-control-lg" %>
+        </div>
+      <div class="form-outline mb-4">
+        <%= f.label :preparation_time %>
+        <%= f.text_area :preparation_time, placeholder: "How long does it take to prepare", class: "form-control form-control-lg"  %> <br />
+      </div>
+      <div class="form-outline mb-4">
+        <%= f.label :cooking_time %>
+        <%= f.text_area :cooking_time, placeholder: "How long does it", class: "form-control form-control-lg"%>
+      </div>
+      <br />
+      <div class="form-outline mb-4">
+        <%= f.label :description %>
+        <%= f.text_area :description, placeholder: "Explain how to cook the meal", class: "form-control form-control-lg"%>
+      </div>
+      <br>
+      <%= f.label :public_recipe %>
+      <%= f.check_box :public_recipe %><br />
+      <div class="submit-btn">
+        <%=f.submit "Add Recipe", data: {turbo: false},  class: "btn btn-primary btn-lg btn-block" %>
+      </div>
+    </div>
+    <% end %>
+</div>
