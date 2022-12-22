@@ -13,3 +13,19 @@
  *= require_tree .
  *= require_self
  */
+ .inline{
+    display: inline-block;
+  }
+  
+  .submit {
+    font-weight: 600;
+    font-size: 14px;
+    letter-spacing: 1px;
+    cursor: pointer;
+    color: white;
+    background-color: green;
+    border: 1px solid green;
+    box-shadow: 2px 2px 3px #cecece;
+    border-radius: 5px;
+    padding: 4px 12px 4px 12px;
+  }

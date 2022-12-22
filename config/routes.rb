@@ -11,6 +11,11 @@ Rails.application.routes.draw do
 
     get '/users/password/new' => 'devise/passwords#new'
     get '/users/password/edit' => 'devise/passwords#edit'
+    get '/inventories' => 'inventories#index'
+    post '/inventories/create' => 'inventories#create'
+    post '/inventories/destroy' => 'inventories#destroy'
+    get 'inventories/:inventory_id' => 'inventories#show'
+    get '/inventories/compare/:recipes_id/inventory_id' => 'inventories#destroy'
   end
 
 

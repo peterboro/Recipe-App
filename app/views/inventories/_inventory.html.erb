@@ -1,7 +1,11 @@
 <div id=<%="inventory-"+inventory.id.to_s %> class="inventory-container">
-<a href =<%= request.original_url+"/"+inventory.id.to_s %> class="-a">
-<h2 id=<%="inventory-"+inventory.id.to_s+"-name" %> class="inventory-name"><%= inventory.name %></h2>
+<div class="i-left">
+<a href =<%= request.original_url+"/"+inventory.id.to_s %> class="-a r-name">
+<h2 id=<%="inventory-"+inventory.id.to_s+"-name" %> class="i-name"><%= inventory.name %></h2>
 </a>
-<p id=<%="inventory-"+inventory.id.to_s+"-summary" %> class = "inventory-summary"><%= inventory.description %></p>
-<h4 id=<%="inventory-"+inventory.id.to_s+"-author" %> class="inventory-author">Author: <%= inventory.user.name %></h4>
+  <%= button_to "Delete", recipes_destroy_path(id: inventory.id), method: :post, class: 'delete-btn'  %>
+</div>
+<div class="i-right">
+<p id=<%="inventory-"+inventory.id.to_s+"-summary" %> class = "r-description"><%= inventory.description %></p>
+</div>
 </div>
