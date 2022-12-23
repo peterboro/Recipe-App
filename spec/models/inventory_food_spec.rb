@@ -1,4 +1,7 @@
 require 'rails_helper'
+require 'capybara/rspec'
+
+Capybara.default_driver = :selenium
 
 RSpec.describe InventoryFood, type: :model do
   subject do
