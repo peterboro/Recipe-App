@@ -1,0 +1,7 @@
+<h1>Missing food items for recipe: <%= @recipe.name %></h1>
+
+<ul>
+  <% @missing_foods.each do |food| %>
+    <li><%= food.name %></li>
+  <% end %>
+</ul>

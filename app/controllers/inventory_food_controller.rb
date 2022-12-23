@@ -34,6 +34,19 @@ class InventoryFoodController < ApplicationController
     end
   end
 
+  def missing_food
+    @recipe = Recipe.find(params[:recipe_id])
+    @inventory_foods = InventoryFood.all
+    @recipe_foods = RecipesFood.where(recipe_id: @recipe.id)
+    missing_foods = []
+    @recipe_foods.each do |recipe_food|
+      unless @inventory_foods.any? { |inventory_food| inventory_food.food_id == recipe_food.food_id }
+        missing_foods << recipe_food.food
+      end
+    end
+    @missing_foods = missing_foods
+  end
+  
   private
 
   def inventory_food_params
