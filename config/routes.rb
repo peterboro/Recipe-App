@@ -16,7 +16,11 @@ Rails.application.routes.draw do
   # Root route
   # root to: 'recipes#index'
 
-  devise_for :users
+  devise_for :users, :controllers => {
+    :registrations => 'devise/registrations',
+    :sessions => 'devise/sessions',
+    :confirmations => 'devise/confirmations'
+  }
 
 
 
@@ -37,17 +41,17 @@ Rails.application.routes.draw do
     # User authentication routes
     devise_for :users
   resources :user do
-    resources :inventories do
+    resources :inventory do
       resources :inventory_food, only: [:new, :create, :destroy, :index]
     end
-    resources :foods
-    resources :recipes do
-      resources :recipe_foods, only: [:new, :create, :destroy, :index]
+    resources :food
+    resources :recipe do
+      resources :recipes_food, only: [ :index, :new, :create, :destroy, :update]
     end
   end
 
-  get '/public_recipes', to: 'recipes#public', as: 'public_recipes'
-
+  get '/public_recipes', to: 'recipe#public'
+  # shoping list
   get '/shopping_list', to: 'food#shopping'
 
   post '/shopping_list', to: 'food#list'

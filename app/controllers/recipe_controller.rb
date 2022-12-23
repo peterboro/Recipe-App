@@ -1,4 +1,4 @@
-class RecipesController < ApplicationController
+class RecipeController < ApplicationController
   def index
     @recipes = Recipe.all
   end
@@ -31,29 +31,20 @@ class RecipesController < ApplicationController
   end
 
   def create
-    @recipes = Recipe.all
-    @recipe = Recipe.new(
-      name: recipe_params[:name],
-      preparation_time: recipe_params[:preparation_time],
-      cooking_time: recipe_params[:cooking_time],
-      description: recipe_params[:description],
-      public_recipe: recipe_params[:public_recipe],
-      user_id: current_user.id
-    )
-
-    if @recipe.valid?
-      @recipe.save
-      flash[:success] = 'Recipe added'
-      redirect_to user_recipe_path(current_user.id, @recipe.id)
+    recipe = Recipe.create(recipe_params)
+    recipe.user_id = current_user.id
+    if recipe.valid?
+      recipe.save
+      flash[:notice] = 'Recipe created successfully'
+      redirect_to user_recipe_index_path(id: current_user.id)
     else
-      flash.now[:error] = 'Recipe Not Added'
-      render 'new'
+      render :new
     end
   end
 
   def destroy
     recipe = Recipe.find(params[:id])
-    redirect_to user_recipe_path(current_user.id)
+    redirect_to user_recipe_index_path(current_user.id)
     if current_user == recipe.user
       recipe.destroy
     else

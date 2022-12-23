@@ -1,6 +1,6 @@
 <div class=" d-flex justify-content-end" style="margin-right: 25rem; margin-bottom: 2rem">
   <% if can? :manage, @recipe %>
-    <%= form_with model:@recipe, url: user_recipe_path(current_user.id, @recipe.id), method: :patch, local: true do |f| %>
+    <%= form_with model:@recipe, url:user_recipe_recipes_food_path(current_user.id, @recipe.id), html:{method: :put} do |f| %>
         <div class="form-check form-switch" id="recipe_public">
               <label class="form-check-label" for="recipe_public">Public Recipe</label>
           <%= f.check_box :public_recipe, class:"form-check-input", onchange: "this.form.submit()" %>
@@ -9,7 +9,7 @@
   <% end %>
 </div>
 <div class="d-flex justify-content-end" style="margin-right: 25rem">
-<%= link_to "Add Ingredient", new_user_recipe_path(current_user.id, @recipe.id), class: "btn btn-primary" %>
+<%= link_to "Add Ingredient",   new_user_recipe_recipes_food_path(current_user.id, @recipe.id), class: "btn btn-dark p-3"  %>
 </div>
 <table class="table table-striped table-bordered table-hover text-center " style="width: 90rem; margin-left: 10rem; margin-top: 3rem">
   <thead class="thead-dark">

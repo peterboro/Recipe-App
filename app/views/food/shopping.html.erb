@@ -1,0 +1,32 @@
+<div>
+  <h1>Shopping List </h1>
+  <div>
+    <div>
+    </div>
+  </div>
+  <table>
+    <tr>
+      <th> #</th>
+      <th> Food Item </th>
+      <th> Quantity </th>
+      <th> Price </th>
+      <th> Total </th>
+    </tr>
+    <% @foods.each do |food| %>
+      <% food.recipes_foods.each do |recipe| %>
+        <% food.inventory_foods.each do |inventory| %>
+          <tr>
+            <td> <%= food.id %> </td>
+            <td> <%= food.name %> </td>
+            <td> <%= recipe.quantity %> <%= food.measurement_unit %></td>
+            <td> $ <%= food.price %> </td>
+            <td> $ <%= recipe.quantity * food.price %> </td>
+          </tr>
+        <% end %>
+      <% end %>
+    <% end %>
+  </table>
+</div>
+
+<!-- Link to the food.css file -->
+<%= stylesheet_link_tag 'food' %>

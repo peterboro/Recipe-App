@@ -4,7 +4,7 @@
   <div class="card mb-3 style-card" style="max-width: 540px; padding-left:30px">
     <div class="row g-0">
       <div class="col-md-4 d-flex flex-column">
-        <%=  link_to recipe.name, user_recipe_path(recipe.user.id, recipe.id), class: "card-title" %>
+        <%=  link_to recipe.name, user_recipe_index_path(user_id: current_user.id), style: "font-weight: bold; font-size: 22px; padding-top: 10px;" %> 
         <span class="font-bold">By: <%= recipe.user.name %></span>
       </div>
       <div class="col-md-8">
