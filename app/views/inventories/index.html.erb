@@ -1,3 +1,11 @@
+
+<%= render partial: "shared/header" %>
+<h1 class="inventory-title">Inventories</h1>
+<%= button_to('New Inventory', '/inventories/new') %>
+<div class="separation bar">
+<% @inventories.each do |inventory| %>
+  <%= render partial: "inventories/inventory", object: inventory %>
+<% end %>
 <div class="food-view">
   <div class="d-flex justify-content-end " style="margin-right: 10rem; margin-top: 5rem">
     <%= link_to 'Add Inventory', new_user_inventory_path(current_user.id), class: "btn btn-dark p-3" %>
