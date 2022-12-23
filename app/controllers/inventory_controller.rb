@@ -18,8 +18,7 @@ class InventoryController < ApplicationController
       user_id: current_user.id
     )
     if @inventory.save
-      flash[:success] = 'Inventory added'
-      redirect_to user_inventory_path(current_user.id, @inventory.id)
+      redirect_to user_inventory_index_path(current_user.id)
     else
       render :new
     end

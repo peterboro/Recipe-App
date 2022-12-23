@@ -1,6 +1,6 @@
 <div class="new-food-container container justify-content-center d-flex flex-column ">
     <h1 class="create-title">Add A New Inventory</h1>
-    <%= form_with model: @food, url: user_inventories_path(current_user.id) do |f| %>
+    <%= form_with model: @food, url: user_inventory_index_path(current_user.id) do |f| %>
     <div class="form-group">
         <div class="form-outline mb-4">
             <%= f.label :name %><br />

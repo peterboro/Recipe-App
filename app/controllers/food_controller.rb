@@ -1,4 +1,4 @@
-class FoodsController < ApplicationController
+class FoodController < ApplicationController
   def index
     @food = Food.all
   end
@@ -20,11 +20,9 @@ class FoodsController < ApplicationController
     )
 
     if @food.save
-      flash[:success] = 'Food added'
-      redirect_to user_foods_path(current_user.id)
+      redirect_to user_food_index_path(current_user.id)
     else
-      flash.now[:error] = 'Food Not Added'
-      render 'new'
+      render :new, alert: 'Cannot Create food retry again'
     end
   end
 
@@ -37,6 +35,16 @@ class FoodsController < ApplicationController
     else
       flash.now[:error] = 'Food Not Deleted'
     end
+  end
+
+  def shopping
+    @foods = Food.all
+    @inventory_foods = InventoryFood.all
+    @recipes_foods = RecipesFood.all
+  end
+
+  def list
+    @shopping = Inventory.find(params[:id])
   end
 
   private

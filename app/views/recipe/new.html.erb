@@ -1,0 +1,32 @@
+<div class="custom-class-1-1">
+  <h1 class="custom-class-2-2">Add A New Recipe</h1>
+  <%= form_with model: Recipe, url: user_recipe_index_path(user_id: current_user.id) do |form| %>
+    <div class="form-group">
+      <div class="custom-class-3-3">
+        <%= form.label :name%>
+        <%= form.text_field :name, placeholder: "name",  class: "form-control form-control-lg" %><br>
+      </div>
+      <div class="custom-class-3-3">
+        <%= form.label :preparation_time %>
+        <%= form.text_area :preparation_time, placeholder: "How long does it take to prepare", class: "form-control form-control-lg"  %> <br />
+      </div>
+      <div class="custom-class-3-3">
+        <%= form.label :cooking_time %>
+        <%= form.text_area :cooking_time, placeholder: "How long does it take to cook", class: "form-control form-control-lg"%>
+      </div>
+      <br />
+      <div class="custom-class-4-4">
+        <p>Description:</p>
+        <%= form.text_area :description, placeholder: "Describe how to cook it", class: "form-control form-control-lg" %>
+      </div>
+      <br>
+      <%= form.label :public_recipe %>
+      <%= form.check_box :public_recipe %><br />
+      <div class="custom-class-5-5">
+        <%=form.submit "Add Recipe", data: {turbo: false},  class: "btn btn-primary btn-lg btn-block" %>
+      </div>
+    </div>
+  <% end %>
+</div>
+
+<%= stylesheet_link_tag 'recipe' %>
