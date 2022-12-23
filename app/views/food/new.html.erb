@@ -1,0 +1,25 @@
+<div>
+    <h1>Add A New Food</h1>
+    <%= form_with model: @food, url: user_food_index_path(current_user.id) do |f| %>
+    <div>
+        <div>
+            <%= f.label :name %><br />
+            <%= f.text_field :name %>
+        </div>
+        <div>
+            <%= f.label :measurement_unit %><br />
+            <%= f.select :measurement_unit, ['grams', 'kilograms', 'units', 'litres', 'dozen'], {}, {}  %>
+        </div>
+        <div>
+            <%= f.label :price %><br />
+            <%= f.number_field :price %>
+        </div>
+        <div>
+             <%= f.submit data: {turbo: false} %>
+        </div>
+    </div>
+    <% end %>
+</div>
+
+<!-- Link to the food.css file -->
+<%= stylesheet_link_tag 'food' %>

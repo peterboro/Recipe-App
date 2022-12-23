@@ -1,0 +1,22 @@
+<div class="custom-class-1">
+  <%=link_to new_user_recipe_path(@recipes) do %>
+    <button class="custom-class-2">Add Recipe</button>
+  <% end %><br />
+</div>
+
+<% @recipes.each do |recipe| %>
+  <div class="custom-class-3">
+    <div class="custom-class-4">
+      <h3><%= link_to user_recipe_path(current_user.id, recipe.id) do %><%=recipe.name%> <%=recipe.id%></h3>
+      <%end%>
+      <% if can? :manage, recipe %>
+        <%= button_to "Remove", user_recipe_path(current_user.id, recipe.id), method: :delete, data: {turbo: false}, class: "custom-class-5" %>
+      </div>
+    <% end %>
+    <div class="custom-class-6">
+      <p><%=recipe.description%> </p>
+    </div>
+  </div>
+<% end %><br />
+
+<%= stylesheet_link_tag 'recipe' %>
