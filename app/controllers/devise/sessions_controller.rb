@@ -1,9 +1,9 @@
 class Devise::SessionsController < DeviseController
-  prepend_before_action :require_no_authentication, only: [:new, :create]
+  prepend_before_action :require_no_authentication, only: %i[new create]
   prepend_before_action :allow_params_authentication!, only: :create
   prepend_before_action :verify_signed_out_user, only: :destroy
-  prepend_before_action only: [:create, :destroy] do
-    request.env["devise.skip_timeout"] = true
+  prepend_before_action only: %i[create destroy] do
+    request.env['devise.skip_timeout'] = true
   end
 
   # GET /resource/sign_in
@@ -41,7 +41,7 @@ class Devise::SessionsController < DeviseController
     methods = resource_class.authentication_keys.dup
     methods = methods.keys if methods.is_a?(Hash)
     methods << :password if resource.respond_to?(:password)
-    { methods: methods, only: [:password] }
+    { methods:, only: [:password] }
   end
 
   def auth_options
@@ -59,11 +59,11 @@ class Devise::SessionsController < DeviseController
   # If there is no signed in user, it will set the flash message and redirect
   # to the after_sign_out path.
   def verify_signed_out_user
-    if all_signed_out?
-      set_flash_message! :notice, :already_signed_out
+    return unless all_signed_out?
 
-      respond_to_on_destroy
-    end
+    set_flash_message! :notice, :already_signed_out
+
+    respond_to_on_destroy
   end
 
   def all_signed_out?

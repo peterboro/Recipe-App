@@ -35,7 +35,7 @@ class RecipeController < ApplicationController
     recipe.user_id = current_user.id
     if recipe.valid?
       recipe.save
-      flash[:notice] = "Recipe created successfully"
+      flash[:notice] = 'Recipe created successfully'
       redirect_to user_recipe_index_path(id: current_user.id)
     else
       render :new
@@ -48,7 +48,7 @@ class RecipeController < ApplicationController
     if current_user == recipe.user
       recipe.destroy
     else
-      flash[:danger] = "Sorry, something went wrong!"
+      flash[:danger] = 'Sorry, something went wrong!'
     end
   end
 

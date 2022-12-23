@@ -3,7 +3,8 @@ require 'rails_helper'
 RSpec.describe Recipe, type: :model do
   subject do
     @user = User.create(name: 'Test User', role: 'admin', email: 'tests@gmail.com', password: '123456')
-    @recipe = Recipe.create(name: 'Test Recipe', user_id: @user.id, description: 'Test Description', preparation_time: 10, cooking_time: 10)
+    @recipe = Recipe.create(name: 'Test Recipe', user_id: @user.id, description: 'Test Description',
+                            preparation_time: 10, cooking_time: 10)
   end
 
   it 'is not valid without a name' do

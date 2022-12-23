@@ -17,13 +17,15 @@ class InventoryFoodController < ApplicationController
     @inventory_food.inventory_id = params[:inventory_id]
     @inventory_food.food_id = params[:food_id]
     @inventory_food.save
-    redirect_to user_inventory_path(current_user.id, params[:inventory_id]), notice: 'Inventory Food was successfully created.'
+    redirect_to user_inventory_path(current_user.id, params[:inventory_id]),
+                notice: 'Inventory Food was successfully created.'
   end
 
   def destroy
     @inventory_food = InventoryFood.find_by(id: params[:id])
 
-    redirect_to user_inventory_path(current_user.id, params[:inventory_id]), notice: 'Inventory Food was successfully deleted.'
+    redirect_to user_inventory_path(current_user.id, params[:inventory_id]),
+                notice: 'Inventory Food was successfully deleted.'
 
     if @inventory_food.destroy
       flash[:success] = 'Inventory deleted'
