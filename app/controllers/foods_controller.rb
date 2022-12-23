@@ -1,49 +1,47 @@
 class FoodsController < ApplicationController
-  before_action :authenticate_user!
-  before_action :set_food, only: %i[show edit update destroy]
-
   def index
-    @foods = current_user.foods.all
+    @food = Food.all
   end
 
-  def show; end
+  def show
+    @food = Food.find(params[:id])
+  end
 
   def new
     @food = Food.new
   end
 
   def create
-    @food = current_user.foods.build(food_params)
+    @food = Food.new(
+      name: food_params[:name],
+      measurement_unit: food_params[:measurement_unit],
+      price: food_params[:price],
+      user_id: current_user.id
+    )
 
     if @food.save
-      redirect_to foods_path, notice: 'Food was successfully created.'
+      flash[:success] = 'Food added'
+      redirect_to user_foods_path(current_user.id)
     else
-      render :new
-    end
-  end
-
-  def edit; end
-
-  def update
-    if @food.update(food_params)
-      redirect_to @food, notice: 'Food was successfully updated.'
-    else
-      render :edit
+      flash.now[:error] = 'Food Not Added'
+      render 'new'
     end
   end
 
   def destroy
-    @food.destroy
-    redirect_to foods_url, notice: 'Food was successfully destroyed.'
+    @food = Food.find(params[:id])
+
+    redirect_to user_food_index_path(current_user.id)
+    if @food.destroy
+      flash[:success] = 'Food deleted'
+    else
+      flash.now[:error] = 'Food Not Deleted'
+    end
   end
 
   private
 
-  def set_food
-    @food = current_user.foods.find(params[:id])
-  end
-
   def food_params
-    params.require(:food).permit(:name, :quantity, :price, :expiration_date, :user_id)
+    params.require(:food).permit(:name, :measurement_unit, :price)
   end
 end

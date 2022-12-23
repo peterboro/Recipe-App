@@ -12,18 +12,24 @@
 </head>
 
 <body>
-<%= render 'partials/nav' %>
-<div class="container">
-  <div>
-    <% if notice %>
-      <p class="alert alert-success"><%= notice %></p>
-    <% end %>
-    <% if alert %>
-      <p class="alert alert-danger text-success"><%= alert %></p>
-    <% end %>
-  </div>
-  <%= yield %>
-</div>
+<%= stylesheet_link_tag 'navigation' %>
+<nav>
+  <% if user_signed_in? %>
+    <%= link_to "Inventories", user_inventories_path(current_user.id) %>
+    <%= link_to "Foods", user_foods_path(current_user.id) %>
+    <%= link_to "Recipes", user_recipes_path(current_user.id) %>
+    <%= link_to "Public Recipes", public_recipes_path %>
+    <%= link_to 'shopping list', shopping_list_path, class: "nav-link " %>
+  <% end %>
+  <%= link_to "Home", root_path %>
+  <% if user_signed_in? %>
+    <%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
+  <% else %>
+    <%= link_to "Sign In", new_user_session_path %>
+    <%= link_to "Sign Up", new_user_registration_path %>
+  <% end %>
+</nav>
 
+<%= yield %>
 </body>
 </html>
