@@ -1,0 +1,20 @@
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: #333;
+  color: white;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  padding: 10px;
+  border-radius: 4px;
+}
+
+nav a:hover {
+  background-color: #ddd;
+  color: #333;
+}
