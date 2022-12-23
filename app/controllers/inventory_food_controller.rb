@@ -46,7 +46,7 @@ class InventoryFoodController < ApplicationController
     end
     @missing_foods = missing_foods
   end
-  
+
   private
 
   def inventory_food_params
